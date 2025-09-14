@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLAUDNET - Ultra HIGH Internet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">CLAUDNET</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#packages">Packages</a>
+                <a href="#coming-soon">Coming Soon</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <div class="floating-elements">
+                <div class="element element-1"></div>
+                <div class="element element-2"></div>
+                <div class="element element-3"></div>
+                <div class="element element-4"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight typing-text" id="typingText">CLAUDNET</span>
+                </h1>
+                <p class="hero-description">Bambika na offer moto moto</p>
+                
+                <div class="free-installation">
+                    <i class="fas fa-star"></i>
+                    <span>Free Installation</span>
+                </div>
+                
+                <p class="service-sentence">Serving both residential and business customers</p>
+            </div>
+            <div class="hero-image">
+                <div class="connectivity-visual">
+                    <svg class="network-svg" viewBox="0 0 300 200">
+                        <!-- Connection lines -->
+                        <line x1="150" y1="50" x2="80" y2="150" class="connection-line line-1"/>
+                        <line x1="150" y1="50" x2="220" y2="150" class="connection-line line-2"/>
+                        <line x1="80" y1="150" x2="220" y2="150" class="connection-line line-3"/>
+                    </svg>
+                    <div class="network-node node-1">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="network-node node-2">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="network-node node-3">
+                        <i class="fas fa-building"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToBenefits()">
+            <div class="scroll-arrow"></div>
+            <span class="scroll-text">Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose CLAUDNET?</h2>
+            <p class="section-subtitle">Experience the difference with our premium service</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Join our 30+ customers</h3>
+                    <p>Be part of our growing community of satisfied customers</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24 hour customer support</h3>
+                    <p>Round-the-clock assistance whenever you need it</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Free Installation</h3>
+                    <p>No hidden costs - professional setup at no extra charge</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2 class="section-title">Our Packages</h2>
+            <p class="section-subtitle">Choose the perfect plan for your needs</p>
+            
+            <div class="packages-grid">
+                <div class="package-card package-1">
+                    <div class="package-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="package-speed">5 MBPS</div>
+                    <div class="package-price">
+                        <span class="currency">Ksh</span>
+                        <span class="amount">1,000</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> High-speed internet</li>
+                        <li><i class="fas fa-check"></i> 24/7 support</li>
+                        <li><i class="fas fa-check"></i> Free installation</li>
+                    </ul>
+                    <button class="package-btn" onclick="contactWhatsApp('5 MBPS')">Get Started</button>
+                </div>
+
+                <div class="package-card package-2 featured">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-icon">
+                        <i class="fab fa-twitch"></i>
+                    </div>
+                    <div class="package-speed">10 MBPS</div>
+                    <div class="package-price">
+                        <span class="currency">Ksh</span>
+                        <span class="amount">1,500</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Ultra-fast internet</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Free installation</li>
+                        <li><i class="fas fa-check"></i> Gaming optimized</li>
+                    </ul>
+                    <button class="package-btn" onclick="contactWhatsApp('10 MBPS')">Get Started</button>
+                </div>
+
+                <div class="package-card package-3">
+                    <div class="package-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div class="package-speed">15 MBPS</div>
+                    <div class="package-price">
+                        <span class="currency">Ksh</span>
+                        <span class="amount">2,000</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Lightning-fast internet</li>
+                        <li><i class="fas fa-check"></i> Premium support</li>
+                        <li><i class="fas fa-check"></i> Free installation</li>
+                        <li><i class="fas fa-check"></i> Multiple devices</li>
+                        <li><i class="fas fa-check"></i> Streaming optimized</li>
+                    </ul>
+                    <button class="package-btn" onclick="contactWhatsApp('15 MBPS')">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section id="coming-soon" class="coming-soon">
+        <div class="container">
+            <h2 class="section-title">Coming Soon</h2>
+            <p class="section-subtitle">Exciting new services launching soon!</p>
+            
+            <div class="coming-soon-grid">
+                <div class="coming-soon-item">
+                    <div class="coming-soon-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>CCTV Installation</h3>
+                    <p>Professional security camera installation and monitoring services</p>
+                    <div class="coming-soon-badge">
+                        <i class="fas fa-clock"></i>
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="section-title">Get Connected Today</h2>
+                <p class="section-subtitle">Ready to experience ultra-high internet? Choose your preferred way to connect with us!</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card phone-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Call Us Directly</h3>
+                    <p>Speak with our team for immediate assistance</p>
+                    <div class="contact-info">
+                        <span class="phone-number">0746974915</span>
+                    </div>
+                    <a href="tel:0746974915" class="contact-action-btn">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Now</span>
+                    </a>
+                </div>
+                
+                <div class="contact-card whatsapp-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Support</h3>
+                    <p>Get instant support via WhatsApp messaging</p>
+                    <div class="contact-info">
+                        <span class="whatsapp-status">Online Now</span>
+                    </div>
+                    <button class="contact-action-btn whatsapp-btn" onclick="contactWhatsApp('WhatsApp Support')">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Start Chat</span>
+                    </button>
+                </div>
+                
+                <div class="contact-card info-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Service Information</h3>
+                    <p>Learn more about our internet packages</p>
+                    <div class="contact-info">
+                        <span class="service-hours">24/7 Support Available</span>
+                    </div>
+                    <a href="#packages" class="contact-action-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>View Packages</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-features">
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <span>24/7 Customer Support</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tools"></i>
+                    <span>Free Installation</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <span>30+ Happy Customers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">CLAUDNET</span>
+                        <p class="footer-tagline">Ultra HIGH Internet - Truly Fast and Unlimited</p>
+                    </div>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>0746974915</span>
+                        </div>
+                        <div class="contact-item" onclick="contactWhatsApp('Contact Us')" style="cursor: pointer;">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp Support</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kisii • Coming to a town near you soon!</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-sections">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#benefits" onclick="contactWhatsApp('Benefits Inquiry')">Why Choose Us</a></li>
+                            <li><a href="#packages" onclick="contactWhatsApp('Package Comparison')">Our Packages</a></li>
+                            <li><a href="#coming-soon">Coming Soon</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#packages" onclick="contactWhatsApp('5 MBPS')">5 MBPS Plan</a></li>
+                            <li><a href="#packages" onclick="contactWhatsApp('10 MBPS')">10 MBPS Plan</a></li>
+                            <li><a href="#packages" onclick="contactWhatsApp('15 MBPS')">15 MBPS Plan</a></li>
+                            <li><a href="#coming-soon" onclick="contactWhatsApp('CCTV Installation')">CCTV Installation</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#contact" onclick="contactWhatsApp('Contact Us')">Contact Us</a></li>
+                            <li><a href="#contact" onclick="contactWhatsApp('24/7 Support')">24/7 Support</a></li>
+                            <li><a href="#contact" onclick="contactWhatsApp('Free Installation')">Free Installation</a></li>
+                            <li><a href="#contact" onclick="contactWhatsApp('Customer Service')">Customer Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; <span id="currentYear">2024</span> CLAUDNET. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
