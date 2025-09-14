@@ -73,11 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            navbar.style.backdropFilter = 'blur(15px)';
+            navbar.style.background = 'linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(6, 182, 212, 0.9) 100%)';
+            navbar.style.backdropFilter = 'blur(25px)';
+            navbar.style.boxShadow = '0 4px 40px rgba(6, 182, 212, 0.4)';
+            navbar.style.borderBottom = '2px solid rgba(6, 182, 212, 0.4)';
         } else {
-            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            navbar.style.backdropFilter = 'blur(10px)';
+            navbar.style.background = 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(6, 182, 212, 0.8) 100%)';
+            navbar.style.backdropFilter = 'blur(20px)';
+            navbar.style.boxShadow = '0 4px 30px rgba(6, 182, 212, 0.3)';
+            navbar.style.borderBottom = '2px solid rgba(6, 182, 212, 0.3)';
         }
     });
     
