@@ -73,15 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
-            navbar.style.background = 'linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(6, 182, 212, 0.9) 100%)';
+            navbar.style.background = 'linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.95) 50%, rgba(14, 165, 233, 0.9) 100%)';
             navbar.style.backdropFilter = 'blur(25px)';
-            navbar.style.boxShadow = '0 4px 40px rgba(6, 182, 212, 0.4)';
-            navbar.style.borderBottom = '2px solid rgba(6, 182, 212, 0.4)';
+            navbar.style.boxShadow = '0 4px 40px rgba(14, 165, 233, 0.4)';
+            navbar.style.borderBottom = '2px solid rgba(14, 165, 233, 0.4)';
         } else {
-            navbar.style.background = 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(6, 182, 212, 0.8) 100%)';
+            navbar.style.background = 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(14, 165, 233, 0.8) 100%)';
             navbar.style.backdropFilter = 'blur(20px)';
-            navbar.style.boxShadow = '0 4px 30px rgba(6, 182, 212, 0.3)';
-            navbar.style.borderBottom = '2px solid rgba(6, 182, 212, 0.3)';
+            navbar.style.boxShadow = '0 4px 30px rgba(14, 165, 233, 0.3)';
+            navbar.style.borderBottom = '2px solid rgba(14, 165, 233, 0.3)';
         }
     });
     
@@ -297,13 +297,13 @@ scrollToTopStyle.textContent = `
         right: 30px;
         width: 50px;
         height: 50px;
-        background: linear-gradient(45deg, #9333ea, #ec4899);
+        background: linear-gradient(45deg, #0ea5e9, #14b8a6);
         color: white;
         border: none;
         border-radius: 50%;
         cursor: pointer;
         font-size: 1.2rem;
-        box-shadow: 0 5px 15px rgba(147, 51, 234, 0.3);
+        box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
         transition: all 0.3s ease;
         z-index: 1000;
         opacity: 0;
@@ -312,7 +312,7 @@ scrollToTopStyle.textContent = `
     
     .scroll-to-top:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(147, 51, 234, 0.4);
+        box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
     }
     
     .scroll-to-top.show {
