@@ -2376,6 +2376,87 @@ button {
     }
 }
 
+/* ---------- Our work reel ---------- */
+
+.work {
+    overflow: hidden;
+}
+
+.reel {
+    --g: clamp(12px, 1.6vw, 20px);
+    position: relative;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.reel-track {
+    display: flex;
+    width: max-content;
+    animation: reel 70s linear infinite;
+}
+
+.reel:hover .reel-track {
+    animation-play-state: paused;
+}
+
+.reel-item {
+    position: relative;
+    flex: none;
+    height: clamp(240px, 30vw, 400px);
+    margin: 0 var(--g) 0 0;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--bg-raised);
+    box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.18);
+}
+
+.reel-item img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease);
+}
+
+.reel-item:hover img {
+    transform: scale(1.04);
+}
+
+.reel-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 60%, rgba(15, 23, 42, 0.85));
+    pointer-events: none;
+}
+
+.reel-item figcaption {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    z-index: 1;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #f8fafc;
+}
+
+@keyframes reel {
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reel {
+        overflow-x: auto;
+    }
+
+    .reel-track {
+        animation: none;
+    }
+}
+
 /* ---------- Motion preferences ---------- */
 
 @media (prefers-reduced-motion: reduce) {

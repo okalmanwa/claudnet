@@ -17,7 +17,6 @@ function contactWhatsApp(context) {
         'Benefits Inquiry': 'Hello! I saw your benefits section and would like to know more about joining CLAUDNET. Please provide me with more information.',
         'Package Comparison': 'Hello! I would like to compare your internet packages and need help choosing the right plan for my needs.',
         'New Customer': 'Hello! I am a new customer interested in CLAUDNET internet services. Please guide me through the signup process.',
-        'Internet in Homa Bay': 'Hello! I am interested in CLAUDNET internet in Homa Bay. Please confirm coverage at my location and tell me about your packages.',
         'CCTV Installation in Kisii': 'Hello! I would like CCTV installation in Kisii. Please help me with a camera plan and a quote.',
         'CCTV Installation in Homa Bay': 'Hello! I would like CCTV installation in Homa Bay. Please help me with a camera plan and a quote.',
         'Kisii enquiry': 'Hello! I am in Kisii County and I am interested in CLAUDNET services. Please get back to me.',
