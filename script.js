@@ -1,12 +1,14 @@
 // WhatsApp Contact Function
 function contactWhatsApp(context) {
-    const phoneNumber = '254746974915'; // Kenya country code + phone number
+    const phoneNumber = '254792271569'; // Kenya country code + phone number
     let message = '';
     
     // Define specific messages based on context
     const messages = {
         'General Inquiry': 'Hello! I am interested in CLAUDNET internet services. Please provide me with more information about your packages and services.',
-        '5 MBPS': 'Hello! I am interested in the 5 MBPS internet package from CLAUDNET. Please provide me with more information about this plan and pricing.',
+        'Get in Touch': 'Hello! I am interested in CLAUDNET internet services. Please provide me with more information about your packages and services.',
+        '8 MBPS': 'Hello! I am interested in the 8 MBPS internet package from CLAUDNET. Please provide me with more information about this plan and pricing.',
+        'CCTV Installation': 'Hello! I am interested in CCTV installation from CLAUDNET. Please provide me with more information.',
         '10 MBPS': 'Hello! I am interested in the 10 MBPS internet package from CLAUDNET. Please provide me with more information about this plan and pricing.',
         '15 MBPS': 'Hello! I am interested in the 15 MBPS internet package from CLAUDNET. Please provide me with more information about this plan and pricing.',
         'WhatsApp Support': 'Hello! I need support with my CLAUDNET internet service. Please help me with my inquiry.',
