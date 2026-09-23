@@ -16,7 +16,12 @@ function contactWhatsApp(context) {
         'Customer Service': 'Hello! I have a question about my CLAUDNET internet service. Please help me with my inquiry.',
         'Benefits Inquiry': 'Hello! I saw your benefits section and would like to know more about joining CLAUDNET. Please provide me with more information.',
         'Package Comparison': 'Hello! I would like to compare your internet packages and need help choosing the right plan for my needs.',
-        'New Customer': 'Hello! I am a new customer interested in CLAUDNET internet services. Please guide me through the signup process.'
+        'New Customer': 'Hello! I am a new customer interested in CLAUDNET internet services. Please guide me through the signup process.',
+        'Internet in Homa Bay': 'Hello! I am interested in CLAUDNET internet in Homa Bay. Please confirm coverage at my location and tell me about your packages.',
+        'CCTV Installation in Kisii': 'Hello! I would like CCTV installation in Kisii. Please help me with a camera plan and a quote.',
+        'CCTV Installation in Homa Bay': 'Hello! I would like CCTV installation in Homa Bay. Please help me with a camera plan and a quote.',
+        'Kisii enquiry': 'Hello! I am in Kisii County and I am interested in CLAUDNET services. Please get back to me.',
+        'Homa Bay enquiry': 'Hello! I am in Homa Bay County and I am interested in CLAUDNET services. Please get back to me.'
     };
 
     const message = messages[context] || `Hello! I am interested in CLAUDNET internet services regarding: ${context}. Please provide me with more information.`;
@@ -29,8 +34,8 @@ window.contactWhatsApp = contactWhatsApp;
     const nav = document.getElementById('nav');
     const menu = document.getElementById('navLinks');
     const toggle = document.getElementById('hamburger');
-    const hero = document.getElementById('home');
-    const contact = document.getElementById('contact');
+    const hero = document.getElementById('home') || document.querySelector('.page-hero');
+    const contact = document.getElementById('contact') || document.querySelector('.cta-band');
     const cue = document.querySelector('.scroll-cue');
     const bar = document.getElementById('mobileBar');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -61,7 +66,7 @@ window.contactWhatsApp = contactWhatsApp;
         const y = window.scrollY;
         nav.classList.toggle('scrolled', y > 24);
         if (cue) cue.classList.toggle('is-gone', y > 40);
-        if (bar) bar.classList.toggle('show', y > hero.offsetHeight * 0.6 && !contactInView);
+        if (bar) bar.classList.toggle('show', y > (hero ? hero.offsetHeight * 0.6 : 400) && !contactInView);
         if (float && !reduceMotion) {
             const r = float.parentElement.getBoundingClientRect();
             if (r.bottom > -200 && r.top < window.innerHeight + 200) {

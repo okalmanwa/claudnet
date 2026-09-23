@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
-        <loc>https://claudnet.co.ke/</loc>
-        <lastmod>2026-09-22</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>https://claudnet.com/</loc>
+        <lastmod>2026-09-23</lastmod>
         <priority>1.0</priority>
+        <image:image><image:loc>https://claudnet.com/images/og/home.jpg</image:loc></image:image>
+        <image:image><image:loc>https://claudnet.com/images/install-rooftop.webp</image:loc></image:image>
+        <image:image><image:loc>https://claudnet.com/images/kisii-hills.webp</image:loc></image:image>
+    </url>
+    <url>
+        <loc>https://claudnet.com/internet-homa-bay/</loc>
+        <lastmod>2026-09-23</lastmod>
+        <priority>0.9</priority>
+        <image:image><image:loc>https://claudnet.com/images/install-indoor.webp</image:loc></image:image>
+    </url>
+    <url>
+        <loc>https://claudnet.com/cctv-installation-kisii/</loc>
+        <lastmod>2026-09-23</lastmod>
+        <priority>0.9</priority>
+        <image:image><image:loc>https://claudnet.com/images/install-cctv.webp</image:loc></image:image>
+    </url>
+    <url>
+        <loc>https://claudnet.com/cctv-installation-homa-bay/</loc>
+        <lastmod>2026-09-23</lastmod>
+        <priority>0.9</priority>
+        <image:image><image:loc>https://claudnet.com/images/install-cctv.webp</image:loc></image:image>
     </url>
 </urlset>
