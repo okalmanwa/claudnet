@@ -16,15 +16,15 @@ function contactWhatsApp(context) {
         'Customer Service': 'Hello! I have a question about my CLAUDNET internet service. Please help me with my inquiry.',
         'Benefits Inquiry': 'Hello! I saw your benefits section and would like to know more about joining CLAUDNET. Please provide me with more information.',
         'Package Comparison': 'Hello! I would like to compare your internet packages and need help choosing the right plan for my needs.',
-        'New Customer': 'Hello! I am a new customer interested in CLAUDNET internet services. Please guide me through the signup process.',
-        'CCTV Installation in Kisii': 'Hello! I would like CCTV installation in Kisii. Please help me with a camera plan and a quote.',
-        'CCTV Installation in Homa Bay': 'Hello! I would like CCTV installation in Homa Bay. Please help me with a camera plan and a quote.',
-        'Kisii enquiry': 'Hello! I am in Kisii County and I am interested in CLAUDNET services. Please get back to me.',
-        'Homa Bay enquiry': 'Hello! I am in Homa Bay County and I am interested in CLAUDNET services. Please get back to me.'
+        'New Customer': 'Hello! I am a new customer interested in CLAUDNET internet services. Please guide me through the signup process.'
     };
 
     const message = messages[context] || `Hello! I am interested in CLAUDNET internet services regarding: ${context}. Please provide me with more information.`;
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+}
+
+function openWhatsApp(message) {
+    window.open(`https://wa.me/254792271569?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
 }
 
 window.contactWhatsApp = contactWhatsApp;
@@ -139,6 +139,61 @@ window.contactWhatsApp = contactWhatsApp;
             row.style.setProperty('--my', (e.clientY - r.top) + 'px');
         });
     });
+
+    // Highlight the nav link for the section in view (home page only)
+    const navAnchors = [...menu.querySelectorAll('a[href^="#"]')];
+    const spyTargets = navAnchors
+        .map(a => document.querySelector(a.getAttribute('href')))
+        .filter(Boolean);
+    if (spyTargets.length && 'IntersectionObserver' in window) {
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const id = '#' + entry.target.id;
+                navAnchors.forEach(a => {
+                    const on = a.getAttribute('href') === id;
+                    a.classList.toggle('is-active', on);
+                    if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+                });
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        spyTargets.forEach(t => spy.observe(t));
+    }
+
+    // Coverage checker: sends the area and service to WhatsApp
+    const covForm = document.getElementById('coverageForm');
+    if (covForm) {
+        const area = document.getElementById('covArea');
+        const service = document.getElementById('covService');
+        const note = document.getElementById('covNote');
+        const internetOpt = service.querySelector('option[value="Internet"]');
+
+        const sync = () => {
+            const opt = area.selectedOptions[0];
+            const county = opt ? opt.dataset.county : '';
+            const homaBay = county === 'homabay';
+            internetOpt.disabled = homaBay;
+            if (homaBay && service.value === 'Internet') service.value = 'CCTV installation';
+            note.textContent = homaBay
+                ? 'In Homa Bay County we install CCTV. Our internet service covers Kisii County.'
+                : '';
+            area.classList.remove('is-invalid');
+        };
+        area.addEventListener('change', sync);
+        service.addEventListener('change', sync);
+
+        covForm.addEventListener('submit', e => {
+            e.preventDefault();
+            if (!area.value) {
+                area.classList.add('is-invalid');
+                note.textContent = 'Please choose your area first.';
+                area.focus();
+                return;
+            }
+            const where = area.value === 'Somewhere else' ? 'an area not listed on your website' : area.value;
+            openWhatsApp(`Hello CLAUDNET! I am in ${where}. Is your ${service.value} available at my location?`);
+        });
+    }
 
     // Copyright year
     const year = document.getElementById('currentYear');
