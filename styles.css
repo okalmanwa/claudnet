@@ -2849,3 +2849,212 @@ body {
 .page-title .place::after {
     display: none;
 }
+
+/* ==========================================================
+   Contrast pass 2: neutral, near-black backgrounds and white text.
+   Blue and teal are kept for accents (lines, icons, buttons),
+   never for running text.
+   ========================================================== */
+
+:root {
+    --bg: #0a101c;
+    --bg-deep: #060a12;
+    --bg-raised: #101828;
+    --text: #ffffff;
+    --body: #eef2f7;
+    --muted: #cdd6e2;
+    --line: rgba(226, 232, 240, 0.16);
+    --line-strong: rgba(226, 232, 240, 0.3);
+}
+
+body {
+    color: var(--text);
+    background: var(--bg);
+}
+
+/* Section titles: solid white instead of white-to-blue gradient */
+.packages .section-title {
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+}
+
+/* Softer glows so text never sits on a bright blue patch */
+.packages-sky::before {
+    opacity: 0.5;
+}
+
+.packages-sky::after {
+    opacity: 0.28;
+    animation: none;
+}
+
+.page-hero,
+.packages,
+.cta-band,
+.section--deep {
+    background-color: var(--bg-deep);
+}
+
+.cctv {
+    background:
+        radial-gradient(50% 80% at 90% 40%, rgba(6, 182, 212, 0.08), transparent 70%),
+        var(--bg-raised);
+}
+
+.cctv-copy p {
+    color: var(--body);
+}
+
+.plan--best {
+    background: rgba(14, 165, 233, 0.07);
+    box-shadow:
+        inset 0 0 0 1px rgba(56, 189, 248, 0.3),
+        0 40px 90px -50px rgba(6, 182, 212, 0.5);
+}
+
+.plan--best .amount {
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+}
+
+.xsell-inner,
+.coverage {
+    background: rgba(255, 255, 255, 0.035);
+    box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+/* Hero: darker scrim behind the words */
+.hero-shade {
+    background:
+        linear-gradient(0deg, var(--bg) 0%, rgba(10, 16, 28, 0.9) 8%, rgba(10, 16, 28, 0) 32%),
+        linear-gradient(180deg, rgba(5, 8, 14, 0.6) 0%, rgba(5, 8, 14, 0) 18%),
+        linear-gradient(90deg, rgba(5, 8, 14, 0.88) 0%, rgba(5, 8, 14, 0.62) 40%, rgba(5, 8, 14, 0.1) 72%);
+}
+
+.hero .eyebrow,
+.hero-claims li,
+.hero-title {
+    color: #ffffff;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Small labels: white text, colour only on the icon */
+.eyebrow,
+.page-hero .eyebrow,
+.cta-band .eyebrow,
+.footer .eyebrow,
+.area-kicker,
+.town-group-title,
+.label,
+.status,
+.status--live,
+.crumbs,
+.footer-col h4,
+.field span,
+.currency,
+.period,
+.speed .u {
+    color: #e6ebf2;
+}
+
+.crumbs a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.coverage-note {
+    padding-left: 12px;
+    border-left: 3px solid var(--cyan);
+    color: #ffffff;
+}
+
+/* Body copy: near white, a touch heavier */
+.section-lede,
+.benefit p,
+.feature p,
+.who-item p,
+.step p,
+.faq-a p,
+.contact-call p,
+.contact-block p,
+.area-towns,
+.xsell p,
+.page-lead,
+.coverage-copy p,
+.plan-features,
+.footer-col a,
+.footer-bottom,
+.nav-links a {
+    color: var(--body);
+}
+
+.section-lede,
+.page-lead,
+.faq-a p,
+.benefit p,
+.feature p,
+.who-item p,
+.step p,
+.contact-block p,
+.contact-call p,
+.area-towns {
+    font-weight: 500;
+}
+
+/* Buttons and badges */
+.btn--grad,
+.btn--grad:hover {
+    background: linear-gradient(45deg, #075985, #155e75, #115e59);
+    color: #ffffff;
+}
+
+.btn--line {
+    border-color: rgba(255, 255, 255, 0.55);
+    color: #ffffff;
+}
+
+.plan-tag {
+    background: linear-gradient(90deg, #7dd3fc, #5eead4);
+    color: #0a101c;
+    box-shadow: none;
+}
+
+.plan-tag::after {
+    display: none;
+}
+
+.text-link {
+    color: #ffffff;
+    border-bottom-width: 2px;
+}
+
+/* Quicker, gentler reveal so text is never half-faded for long */
+.js [data-reveal] {
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.6s var(--ease);
+    transition-delay: calc(var(--d, 0) * 60ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+.reel-item::after {
+    background: linear-gradient(180deg, rgba(6, 10, 18, 0) 55%, rgba(6, 10, 18, 0.92));
+}
+
+.reel-item figcaption {
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* No light sweep across button text */
+.btn--shine::after {
+    display: none;
+}
